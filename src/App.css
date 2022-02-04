@@ -36,3 +36,137 @@
     transform: rotate(360deg);
   }
 }
+/* My classes */
+.d-flex{
+  display: flex;
+}
+.column{
+  flex-direction: column;
+}
+.column-reverse{
+  flex-direction: column-reverse;
+}
+.f-wrap{
+  flex-wrap: wrap;
+}
+.flex1{
+  flex: 1;
+}
+.flex2{
+  flex: 2;
+}
+.just-center{
+  justify-content: center;
+}
+.just-between{
+  justify-content: space-between;
+}
+.just-evenly{
+  justify-content: space-evenly;
+}
+.just-start{
+  justify-content: start;
+}
+.just-end{
+  justify-content: end;
+}
+.just-around{
+  justify-content: space-around;
+}
+.ali-center{
+  align-items: center;
+}
+.ali-start{
+  align-content: flex-start;
+}
+.ali-around{
+  align-content: space-around;
+}
+.just-space{
+  justify-content: space-around;
+}
+.d-none{
+  display: none;
+}
+.bg-blue{
+  background-color: rgb(105, 186, 212);
+}
+.bg-rose{
+  background-color: rgb(216, 163, 163);
+}
+.bg-lblue{
+  background-color: rgb(230, 231, 233);
+}
+
+/* ******* Classes, Elements ******* */
+.sticky{
+  position: sticky;
+  top: 0;
+}
+button{
+  cursor: pointer;
+  padding: 5px 15px;
+  margin: 10px;
+  text-decoration: none;
+}
+.pointer{
+  cursor: pointer;
+}
+/* Elements */
+img {
+  width: 300px;
+  object-fit: contain;
+}
+.box{
+  width: 320px;
+}
+.infodiv{
+  padding: 0 20px;
+  text-align: justify;
+}
+.container{
+  max-height: 380px;
+  overflow-y: scroll;
+  padding: 0 10px;
+}
+.header{
+  text-align: center;
+}
+.btn{
+  padding: 0 5px;
+  margin: 20px 0;
+}
+.container2{
+  margin: 10xp 0;
+  border: 1px solid blue;
+  text-align: left;
+  padding-left: 20px; 
+background-color: white;
+}
+
+
+/*  Spinner */
+.rotate{
+  animation-name: rotate;
+  animation-duration: 2s;
+  font-size: 48px;
+}
+@keyframes rotate {
+  0% {
+      rotate: 0deg;
+   }
+  33% {
+      rotate: 120deg;
+  }
+  66% {
+     rotate: 240deg;
+   }
+  100% {
+      rotate: 360deg;
+  }
+}
+.anime{
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+}
