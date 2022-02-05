@@ -8,7 +8,7 @@ import Product from './components/Product';
 function App() {
   const divStyle = {
     width: "100%", 
-    // height: "100vh",
+    minHeight: "400px",
     border: "1px solid blue",
     borderRadius: "10px",
     margin: "10px",

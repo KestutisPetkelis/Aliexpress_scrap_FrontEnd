@@ -56,11 +56,12 @@ const Product = ({myProduct}) => {
                <p>{allStars(myProduct.ratings.averageStar)}</p>
             </div>
         </div> 
-        <h2>Comments:</h2>
+        <h2>Comments: {myProduct.feedback.length} overall</h2>
         <div>
             {myProduct.feedback.map((x,index)=>
                 <div className='container2' key={index}>
                     <p>Name: {x.name}</p>
+                    <p>Posted: {x.date.replace("T", " ").slice(0, -8)}</p>
                     <p>Display name: {x.displayName}, {x.country}</p>
                     <p>{allStars(x.rating)}</p>
                     <p>{x.content}</p>
