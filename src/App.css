@@ -145,16 +145,18 @@ background-color: white;
 }
 .examples{
   position: absolute;
-  top:20px;
+  top:40px;
   left:40px;
   text-align: left;
   font-size: 12px;
 
 }
-/* li {
+li {
   cursor: pointer;
-} */
-
+}
+.examples p{
+  margin: 2px 0;
+}
 /*  Spinner */
 .rotate{
   animation-name: rotate;
