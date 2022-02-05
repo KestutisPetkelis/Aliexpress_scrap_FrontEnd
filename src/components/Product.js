@@ -51,6 +51,7 @@ const Product = ({myProduct}) => {
                 <div className='container bg-lblue'>
                     {parse(myProduct.description)}
                 </div>
+                <p>Available quantity: <i>{myProduct.totalAvailableQuantity}</i></p>
                <p>Price (min - max): <b>{myProduct.salePrice.min} - {myProduct.salePrice.max} €</b></p>
                <p>Rating:  <b>{myProduct.ratings.averageStar}</b></p>
                <p>{allStars(myProduct.ratings.averageStar)}</p>
