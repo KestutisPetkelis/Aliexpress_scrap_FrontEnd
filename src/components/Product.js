@@ -1,13 +1,13 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom'
 
-import { MdStarRate} from "react-icons/md";
-import { MdOutlineStarRate} from "react-icons/md";
-import { RiArrowGoBackFill } from "react-icons/ri";
+import { MdStarRate} from "react-icons/md";         // pilnavidures zvaigzdutes ikonele
+import { MdOutlineStarRate} from "react-icons/md";  // tusciavidures zvaigzdutes ikonele
+import { RiArrowGoBackFill } from "react-icons/ri"; // grizimo rodykles ikonele
 
-import SimpleImageSlider from "react-simple-image-slider";
+import SimpleImageSlider from "react-simple-image-slider";  // isidedam gatava slaideri...
 
-import parse from "html-react-parser"
+import parse from "html-react-parser"   // isidedam parserio biblioteka, kad galetumem atvaizduoti HTML koda is "string" tipo kintamojo
 
 const Product = ({myProduct}) => {
 
@@ -25,7 +25,7 @@ const Product = ({myProduct}) => {
     const pics = myProduct.images.map(x => x={url: x}) //suformuojam atvaizdavimui per <SimpleImageSlider> masyva
     const title = myProduct.title.replace(/&#39;/, "'") // kad atvaizduotu (') normaliai
     
-    let images = []             // masyvas variantu atvaizdavimui
+    let images = []             // masyvas produkto variantu atvaizdavimui
     if(myProduct.variants.options[1]){      // logika variantu apdarojimui del durnos  "kitaiskos" duomenu strukturos
         if(myProduct.variants.options[0].values[0].image){
             images = myProduct.variants.options[0].values

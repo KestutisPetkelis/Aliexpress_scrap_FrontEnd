@@ -2,14 +2,14 @@ import React from 'react';
 import { useRef, useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 
-import { ImSpinner9 } from "react-icons/im";
+import { ImSpinner9 } from "react-icons/im";  // spinerio ikonele
 
 const MainPage = ({setMyProduct}) => {
 
     const productId = useRef()
     const nav = useNavigate()
     const [loading, setLoading] = useState(true)    // tikrinimui ar uzsikrove is serverio
-    const [exampleNum, setExampleNum] = useState("")
+    const [exampleNum, setExampleNum] = useState("") // duomenu perdavimui i defaultValue reiksme <input> lauke 
     
     const setnumEx=(e)=>{
         console.log(e, e.target.innerText)
@@ -24,14 +24,14 @@ const MainPage = ({setMyProduct}) => {
                 "content-type":"application/json"
             },
             body: JSON.stringify({product})              // per cia perduodam duomenis
-          } 
+          }                                 // kadangi product yra ne objektas, ji perduodam kaip objekta {}
       
           const res = await fetch("http://localhost:4000/getproduct", options)
           const data = await res.json()
-          setLoading(true)
+          setLoading(true)              // pakeiciam  busena, kai ateina duomenys is serverio
           console.log("data", data)
-          setMyProduct(data.resp)
-          nav(`/product/${product}`)
+          setMyProduct(data.resp)       // idedam duomenis i myProduct state
+          nav(`/product/${product}`)    // pereinam i Product langa
 
 
         console.log("get info ", product)
