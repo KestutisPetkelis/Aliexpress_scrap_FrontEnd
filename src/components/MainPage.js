@@ -53,6 +53,7 @@ const MainPage = ({setMyProduct}) => {
                 <li onClick={(e)=>setnumEx(e)}>1005003673614975</li>
                 <li onClick={(e)=>setnumEx(e)}>1005003841279816</li>
                 <li onClick={(e)=>setnumEx(e)}>1005003754960741</li>
+                <li onClick={(e)=>setnumEx(e)}>32958933105</li>
             </div>
             {!loading && <div >
                     <p>Loading...</p>

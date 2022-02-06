@@ -25,7 +25,15 @@ const Product = ({myProduct}) => {
     const pics = myProduct.images.map(x => x={url: x}) //suformuojam atvaizdavimui per <SimpleImageSlider> masyva
     const title = myProduct.title.replace(/&#39;/, "'") // kad atvaizduotu (') normaliai
     
-
+    let images = []
+    if(myProduct.variants.options[1]){
+        if(myProduct.variants.options[0].values[0].image){
+            images = myProduct.variants.options[0].values
+        }else 
+        if(myProduct.variants.options[1].values[0].image ){
+            images = myProduct.variants.options[1].values
+        }
+    }
 
   return (
     <div>
@@ -35,7 +43,7 @@ const Product = ({myProduct}) => {
                 <h2>Product Info</h2>
             </div>
         </div>
-        {/* {myProduct.description} */}
+        
         <div className='d-flex '>
             <div className='box'> 
             <SimpleImageSlider
@@ -51,10 +59,23 @@ const Product = ({myProduct}) => {
                 <div className='container bg-lblue'>
                     {parse(myProduct.description)}
                 </div>
+                { images.length>0 &&
+                    <div>
+                        <p>Variants: </p>
+                        <div className='d-flex f-wrap'>
+                            {images.map((x,index)=>
+                            <div key={index}>
+                                <img className='variantspics' src={x.image} alt=""/>
+                            </div>
+                            )}
+                        </div>
+                    </div>
+                }
+
                 <p>Available quantity: <i>{myProduct.totalAvailableQuantity}</i></p>
-               <p>Price (min - max): <b>{myProduct.salePrice.min} - {myProduct.salePrice.max} €</b></p>
-               <p>Rating:  <b>{myProduct.ratings.averageStar}</b></p>
-               <p>{allStars(myProduct.ratings.averageStar)}</p>
+                <p>Price (min - max): <b>{myProduct.salePrice.min} - {myProduct.salePrice.max} €</b></p>
+                <p>Rating:  <b>{myProduct.ratings.averageStar}</b></p>
+                <p>{allStars(myProduct.ratings.averageStar)}</p>
             </div>
         </div> 
         <h2>Comments: {myProduct.feedback.length} overall</h2>
