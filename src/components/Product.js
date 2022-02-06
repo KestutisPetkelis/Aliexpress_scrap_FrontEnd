@@ -25,8 +25,8 @@ const Product = ({myProduct}) => {
     const pics = myProduct.images.map(x => x={url: x}) //suformuojam atvaizdavimui per <SimpleImageSlider> masyva
     const title = myProduct.title.replace(/&#39;/, "'") // kad atvaizduotu (') normaliai
     
-    let images = []
-    if(myProduct.variants.options[1]){
+    let images = []             // masyvas variantu atvaizdavimui
+    if(myProduct.variants.options[1]){      // logika variantu apdarojimui del durnos  "kitaiskos" duomenu strukturos
         if(myProduct.variants.options[0].values[0].image){
             images = myProduct.variants.options[0].values
         }else 
